@@ -25,9 +25,9 @@ export const phoneBox={
 }
 export const addButton={
 	...button,
-	padding:'0',
+	padding:'0px',
 	marginLeft:`${lineWidth-width*2-emailWidth-phoneWidth-16*4}px`,	
-	lineHeight:'40px'
+	verticalAlign:'middle'
 }
 	export const save ={
 		...addButton,

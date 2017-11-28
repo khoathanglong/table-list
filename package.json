@@ -1,6 +1,7 @@
 {
   "name": "dungeon",
   "version": "0.1.0",
+   "homepage" : "http://khoathanglong.github.io/table-list",
   "private": true,
   "dependencies": {
     "gh-pages": "^1.1.0",

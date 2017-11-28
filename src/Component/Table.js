@@ -2,7 +2,7 @@ import React from 'react';
 import {titleLine, phoneTitle,mailTitle,nameTitle} from '../Style/Style-DataTitle'
 import {nameData,mailData,phoneData,editData,dataLine,edit, del, tableStyle} from '../Style/Style-DataRow'
 import {nameBox, mailBox, phoneBox,addButton, save, cancel} from '../Style/Style-Input'
-import {cancelEdit, saveEdit, onChange,editRow,delRow} from '../Action/Action'
+import {cancelEdit, saveEdit,editRow,delRow,sorting} from '../Action/Action'
 //not validate yet
 
 const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
@@ -27,7 +27,7 @@ const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
 		<div>
 			<form style={dataLine} action="" 
 			onSubmit={event => {event.preventDefault(); 
-								dispatch(onChange(row, name,email,phone)) }} >
+								dispatch(saveEdit(row, name,email,phone)) }} >
 				<input name='editName' style={nameBox} type="text" defaultValue={name}  
 					onChange={(event)=> {name=event.target.value;} } required />
 				<input name='editEmail' style={mailBox} type="email" defaultValue={email} 
@@ -45,11 +45,11 @@ const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
 	)
 }
 
- const Table= ({list,dispatch})=> {
+ const Table= ({list,dispatch,ascending})=> {
 	return (
 		<div  style={tableStyle} >
 			<div style={titleLine}>
-				<div className="name" style={nameTitle} >Name  
+				<div className="name" style={nameTitle} onClick={() =>dispatch(sorting())} >Name  
 					<i className="material-icons" style={{fontSize:'0.8em',color:'grey'}}> arrow_downward</i>
 				</div>
 				<div className="email" style={mailTitle} >E-mail address</div>

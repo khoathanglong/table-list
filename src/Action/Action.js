@@ -23,13 +23,7 @@ export const delRow = (row)=>{
 	})
 };
 
-export const saveEdit = (row)=>{
-	return(
-	{
-		type:'SAVE_EDIT',
-		row
-	})
-}
+
 export const cancelEdit = (edit,row)=>{
 	return(
 	{
@@ -39,9 +33,15 @@ export const cancelEdit = (edit,row)=>{
 	})
 }
 
-export const onChange = (row,name,email,phone)=>{
+export const saveEdit = (row,name,email,phone)=>{
 	return {
-		type:'ON_CHANGE',
+		type:'SAVE_EDIT',
 		row,name, email,phone
+	}
+}
+
+export const sorting = ()=>{
+	return {
+		type:'SORTING',
 	}
 }
