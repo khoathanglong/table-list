@@ -1,7 +1,7 @@
 import {createStore} from 'redux';
 import reducer from '../Reducer/appReducer'
 
-const initialList = [{name:'Jone Doe', email:'Jone.dow@gmail.com', phone:'032352352', editing:false},
+const initialList = [{name:'Jone Doe', email:'Jone.dow@gmail.com', phone:'032352352', editing:true},
 					{name:'HAJone Y', email:'JoneYY2.dow@gmail.com', phone:'0062352314', editing:false},
 					{name:'Jone YZ', email:'JoneYY3.dow@gmail.com', phone:'0062325234', editing:false},
 					{name:'SJone YT', email:'JoneYY4.dow@gmail.com', phone:'0062335234', editing:false},

@@ -35,7 +35,10 @@ const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
 				<input name='editPhone' style={phoneBox} type="tel" defaultValue={phone} 
 					onChange={(event)=> {phone=event.target.value;} } required />
 				<div style={addButton}>
-					<button name='cancelEdit' style={cancel} onClick={()=>dispatch(cancelEdit(editing,row))}>Cancel</button>
+					<button name='cancelEdit' style={cancel} 
+					onClick={()=>dispatch(cancelEdit(editing,row))}>
+						Cancel
+					</button>
 					<button name='saveEdit' style={save}  type="submit" >Save</button>
 				</div>
 				

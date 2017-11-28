@@ -27,16 +27,15 @@ export const addButton={
 	...button,
 	padding:'0px',
 	marginLeft:`${lineWidth-width*2-emailWidth-phoneWidth-16*4}px`,	
-	verticalAlign:'middle'
+	lineHeight:'40px',
 }
 	export const save ={
-		...addButton,
+		...button,
 		background:'#07f',
 		color:'#ffffff',
 		fontSize:'16px',
 		fontWeight:'500',
 		width: `${width/2}px`,
-		display:'inline-block',
 		marginLeft:'1px',
 	}
 	export const cancel ={
@@ -44,7 +43,6 @@ export const addButton={
 		marginLeft:'-20px',
 		background:'#d9d9d9',
 		color:'#07f'
-
 	}
 
 export const inputLine = {
