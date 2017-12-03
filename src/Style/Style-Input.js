@@ -2,16 +2,23 @@ const width=150;
 const emailWidth=width*1.5;
 const phoneWidth=width*1.2;
 const lineWidth=912;
+const boxHeight=40;
 
 const button = {
 	padding:'0',
 	display:'inline-block',
-	height:'40px',
+	height:`${boxHeight}px`, //is the height of input content but is the height of the button
 	width: `${width}px` ,
+	backgroundColor:'#FAFAFA',
+	border:'1px solid #EEEEEE ',
+	paddingLeft:'10px',
+	boxSizing:'border-box',
+
 }
 export const nameBox={
 	...button,
-	marginLeft:'16px'
+	marginLeft:'16px',
+
 }
 export const mailBox={
 	...button,
@@ -25,24 +32,40 @@ export const phoneBox={
 }
 export const addButton={
 	...button,
-	padding:'0px',
-	marginLeft:`${lineWidth-width*2-emailWidth-phoneWidth-16*4}px`,	
-	lineHeight:'40px',
+	height:`${boxHeight}px`,
+	paddingLeft:'0px',
+	position:'relative',
+	left:`${lineWidth-width*2-emailWidth-phoneWidth-16*4}px`,	
+	backgroundColor:'#EDEDED',
+	fontWeight:'600',
+	color:'#757575'
+	
+}
+export const groupButton ={
+	display:'inline-block',
+	margin:'0',
+	lineHeigh:'40px',
+	position:'relative',
+	left:`${lineWidth-width-emailWidth-phoneWidth-190-16*4-5}px`,
 }
 	export const save ={
-		...button,
+		height:`${boxHeight}px`,
 		background:'#07f',
 		color:'#ffffff',
 		fontSize:'16px',
 		fontWeight:'500',
-		width: `${width/2}px`,
-		marginLeft:'1px',
+		width: `${90}px`,
+		padding:'0',
+		border:'0px',
+		marginLeft:'4px'
 	}
 	export const cancel ={
 		...save,
-		marginLeft:'-20px',
-		background:'#d9d9d9',
-		color:'#07f'
+		background:'#EDEDED',
+		color:'#107FFE',
+		marginLeft:'0px',
+		width: `${100}px`,
+		
 	}
 
 export const inputLine = {
@@ -50,4 +73,5 @@ export const inputLine = {
 	height: '40px',
 	width:`${lineWidth}px` ,
 	backgroundColor:'white',
+	marginBottom:'9px'
 }

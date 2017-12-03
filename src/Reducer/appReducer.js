@@ -1,6 +1,6 @@
 
 
-const reducer = (state={list:[], ascending:false}, action)=>{
+const reducer = (state={list:[], ascendingNAME:false,ascendingEMAIL:false,ascendingPHONE:false}, action)=>{
 	let nextState=state.list.slice();
 		if (action.type=== 'ADD_NEW'){
 			return {...state,
@@ -22,30 +22,31 @@ const reducer = (state={list:[], ascending:false}, action)=>{
 			nextState.splice(action.row, 1, newRow);
 			return {...state, list:nextState};
 		}
-		else if(action.type==='SORTING'){
-			nextState.sort(function(a,b){
-				let first =a.name.toUpperCase();
-				let second= b.name.toUpperCase(); //ignore upper case
-				if( action.ascending===false){
-					if (first>second){
-						return 1
-					}
-					if (first<second){
-						return -1
-					}
-					action.ascending=true;
-				}
-				else{
-					if (first>second){
-						return -1
-					}
-					if (first<second){
-						return 1
-					}
-					action.ascending=false;
-				}
-				return 0	
-			})
+		else if(action.type==='SORTING_NAME'){
+				state.ascendingNAME=!state.ascendingNAME
+				nextState.sort((a,b)=>{
+					let first =a.name.toUpperCase();
+					let second= b.name.toUpperCase();
+					return (state.ascendingNAME? first>second :first<second)
+				} )
+			return {...state,list:nextState}
+		}
+		else if(action.type==='SORTING_EMAIL'){
+			state.ascendingEMAIL=!state.ascendingEMAIL
+				nextState.sort((a,b)=>{
+					let first =a.email.toUpperCase();
+					let second= b.email.toUpperCase();
+					return (state.ascendingEMAIL? first>second :first<second)
+				} )
+			return {...state,list:nextState}	
+		}
+		else if(action.type==='SORTING_PHONE'){
+			state.ascendingPHONE=!state.ascendingPHONE
+				nextState.sort((a,b)=>{
+					let first =Number(a.phone);
+					let second= Number(b.phone);
+					return (state.ascendingPHONE? first-second :second-first)
+				} )
 			return {...state,list:nextState}
 		}
 		else

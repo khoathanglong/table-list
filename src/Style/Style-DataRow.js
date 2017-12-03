@@ -2,51 +2,51 @@ import {titleLine, phoneTitle,mailTitle,nameTitle} from './Style-DataTitle'
 const dataLineHeight = 72;
 const lineHeight=24;
 
+const commonStyle={
+	color:'#505050',
+	lineHeight: `${lineHeight}px`,
+	fontSize:'16px',
+	display:'inline-table',
+}
+
 const nameData ={
 	...nameTitle,
-	color:'#505050',
-	height:`auto`,
-	lineHeight: `${lineHeight}px`,
-	fontSize:'16px',	
+	...commonStyle,
 
 
 }
 const mailData = {
 	...mailTitle,
-	color:'#505050',
-	height:`auto`,
-	lineHeight: `${lineHeight}px`,
-	fontSize:'16px',	
-	
-
+	...commonStyle,
 }
 const phoneData = {
 	...phoneTitle,
-	color:'#505050',
-	height:`auto`,
-	lineHeight: `${lineHeight}px`,
-	fontSize:'16px',	
-	
+	...commonStyle,
 	
 }
 const editData = {
-	display:'inline-block',
+	position:'relative',
+	left:'175px',
 	width: '150px',
-	marginLeft:'150px',
-	lineHeight: `${lineHeight}px`,
+	margin:'0px',
+	lineHeight: `${24}px`,
 	height:`${lineHeight}px`,
+	display:'inline-block'
 
 }
 const edit = { 
-	marginLeft:'10px',
-	float:'left',
-	// fontSize:'16px' : if fontSize is equal that of other data in table line, they will be in one-line. 
-	//how to make it in 1 line even if the fontSize is different
-	//default fontSize: 24px
+	color:'#909090',
+	verticalAlign:'bottom',
+	display:'inline-block',
 
 }
 const del= {
-	marginLeft:'40px',
+	color:'#909090',
+	display:'inline-block',
+	verticalAlign:'bottom',
+	position:'relative',
+	left:'40px'
+	
 }
 
 const dataLine={
@@ -56,6 +56,10 @@ const dataLine={
 	lineHeight: `${dataLineHeight}px`,
 
 }
+export const tableData={
+	paddingBottom:'100px'
+}
+
 const tableStyle={
 	
 	width:'912px'

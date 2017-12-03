@@ -1,11 +1,11 @@
 import React from 'react';
 import {titleLine, phoneTitle,mailTitle,nameTitle} from '../Style/Style-DataTitle'
-import {nameData,mailData,phoneData,editData,dataLine,edit, del, tableStyle} from '../Style/Style-DataRow'
-import {nameBox, mailBox, phoneBox,addButton, save, cancel} from '../Style/Style-Input'
-import {cancelEdit, saveEdit,editRow,delRow,sorting} from '../Action/Action'
+import {nameData,mailData,phoneData,editData,dataLine,edit, del, tableStyle,tableData} from '../Style/Style-DataRow'
+import {nameBox, mailBox, phoneBox, save, cancel,groupButton} from '../Style/Style-Input'
+import {cancelEdit, saveEdit,editRow,delRow,sortingNAME,sortingEMAIL,sortingPHONE} from '../Action/Action'
 //not validate yet
 
-const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
+const Line = ({name,email,phone,editing, row, dispatch}) =>{
 	return !editing ? 
 	(
 		<div style={dataLine} >
@@ -16,10 +16,12 @@ const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
 				<div className="email" style={mailData}> {email} </div>
 				<div className="phone" style={phoneData}> {phone} </div>
 				<div style={editData}>
-					<i style={edit} className="material-icons"  fill="#909090" 
-					onClick={()=> dispatch(editRow(editing,row)) } >mode_edit</i>	
+				 
+				 	<i style={edit} className="material-icons"  
+						onClick={()=> dispatch(editRow(editing,row)) } >mode_edit</i>	
 					<i style={del} className="material-icons" 
-					onClick={()=> dispatch(delRow(row))} fill="#909090">delete</i>
+						onClick={()=> dispatch(delRow(row))} >delete</i>
+				
 				</div>
 			</div>
 		</div>
@@ -34,7 +36,7 @@ const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
 					onChange={(event)=> {email=event.target.value; } } required />
 				<input name='editPhone' style={phoneBox} type="tel" defaultValue={phone} 
 					onChange={(event)=> {phone=event.target.value;} } required />
-				<div style={addButton}>
+				<div style={groupButton}>
 					<button name='cancelEdit' style={cancel} 
 					onClick={()=>dispatch(cancelEdit(editing,row))}>
 						Cancel
@@ -52,13 +54,23 @@ const Line = ({name,email,phone,editing, handleCancel, row, dispatch}) =>{
 	return (
 		<div  style={tableStyle} >
 			<div style={titleLine}>
-				<div className="name" style={nameTitle} onClick={() =>dispatch(sorting())} >Name  
-					<i className="material-icons" style={{fontSize:'0.8em',color:'grey'}}> arrow_downward</i>
+				<div className="name" style={nameTitle} onClick={() =>dispatch(sortingNAME())} >
+					<div style={{width:'60px', color:'#505050'}}>
+						Name  
+						<i className="material-icons" style={{fontSize:'16px',color:'#505050',float:'right'}}>arrow_downward</i>
+					</div>
 				</div>
-				<div className="email" style={mailTitle} >E-mail address</div>
-				<div className="phone" style={phoneTitle}>Phone number</div>
+				<div className="email" style={mailTitle} onClick={() =>dispatch(sortingEMAIL())} >
+					E-mail address
+				</div>
+				<div className="phone" style={phoneTitle} onClick={() =>dispatch(sortingPHONE())}>
+					Phone number
+				</div>
 			</div>
-			{list.map((list,i) => <Line key={`${list.email}${i}`} {...list} dispatch={dispatch} row={i} /> )}
+			<div style={tableData} >
+				{list.map((list,i) => <Line key={`${list.email}${i}`} {...list} dispatch={dispatch} row={i} /> )}
+			</div>
+			
 		</div>
 		)
 }

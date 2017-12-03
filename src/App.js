@@ -7,7 +7,7 @@ import  tableStyle from './Style/Table-Style'
 import titleStyle from './Style/Title-Style'
 import headerStyle from './Style/HeaderStyle'
 import appStyle from './Style/AppBackground'
-console.log(titleStyle)
+
 class App extends Component {
   render() {
     return (

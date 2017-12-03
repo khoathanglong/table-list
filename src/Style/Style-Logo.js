@@ -1,6 +1,9 @@
+ import {tableSize} from './Table-Style'
 export const logo= {
 	float: 'left',//inner div is bigger than its parent if using display:inline-block
-	padding: '32px 10px 32px 32px',
+	position:'relative',
+	left:'32px',
+	top:'32px',	
 	lineHeight: '0px',
 }
 export const path={
@@ -10,12 +13,16 @@ export const path={
 export const header={
 	height:'96px',
 	lineHeight:'96px',
-	backgroundColor:'#757575',
-	width:'100%',
+	backgroundColor:'#ADB5BD',
+	width:`${tableSize+32*2}px`,
 }
 export const name= {
+	fontFamily:'helvetica, arial, sans-serif',
 	color:'white',
 	float: 'left', //inner div is bigger than its parent if using display:inline-block
 	fontSize:'1.5em',
-	height:'100%',
+	position:'relative',
+	left:'50px',
+	fontWeight:'500',
+	lineHeight:'96px'
 	}

@@ -40,8 +40,18 @@ export const saveEdit = (row,name,email,phone)=>{
 	}
 }
 
-export const sorting = ()=>{
+export const sortingNAME = ()=>{
 	return {
-		type:'SORTING',
+		type:'SORTING_NAME',
+	}
+}
+export const sortingEMAIL = ()=>{
+	return {
+		type:'SORTING_EMAIL',
+	}
+}
+export const sortingPHONE = ()=>{
+	return {
+		type:'SORTING_PHONE',
 	}
 }

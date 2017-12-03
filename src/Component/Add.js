@@ -9,14 +9,14 @@ const Add = ({dispatch}) => {
 	return(
 			<form style={inputLine} onSubmit={ event=> {
 				event.preventDefault();
-				if (name.trim()===""||phone.trim()=="") return false
+				if (name.trim()===""||phone.trim()==="") return false
 				dispatch(addNew(name, email,phone))
 				return true
 			}} >
-				<input name='addName' style={nameBox} type="text" placeholder="name" 
+				<input name='addName' style={nameBox} type="text" placeholder="Full name" 
 				onChange={e=>name=e.target.value} required/>
-				<input name='addEmail' style={mailBox} type="email" placeholder="email" onChange={e=>email=e.target.value} required />
-				<input name='addPhone' style={phoneBox} type="tel" placeholder="phone number" onChange={e=>phone=e.target.value} required/>	
+				<input name='addEmail' style={mailBox} type="email" placeholder="E-mail address" onChange={e=>email=e.target.value} required />
+				<input name='addPhone' style={phoneBox} type="tel" placeholder="Phone number" onChange={e=>phone=e.target.value} required/>	
 				<button name='addButton' style={addButton} type="submit">Add New</button>
 			</form>
 		

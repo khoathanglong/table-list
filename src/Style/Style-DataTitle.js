@@ -4,32 +4,31 @@ const fontSize=14;
 const lineHeight=16;
 const fontWeight=500;
 const titleLineHeight=48;
+const commonStyle={
+	backgroundColor:'transparent',
+	border:'0px',
+	height:'auto',
+	fontWeight:fontWeight,
+	fontSize: `${fontSize}px`,
+	lineHeight:`${lineHeight}px`,
+	color:color,
+	paddingLeft:'8px'
 
+}
 
 const nameTitle = {
 	...nameBox,
-	fontSize: `${fontSize}px`,
-	lineHeight:`${lineHeight}px`,
-	fontWeight:fontWeight,
-	height:'auto',
-	color:color
+	...commonStyle,
+
 }
 const mailTitle= {
 	...mailBox,
-	fontSize: `${fontSize}px`,
-	lineHeight:`${lineHeight}px`,
-	fontWeight:fontWeight,
-	height:'auto',
-	color:color
+	...commonStyle,
 
 }
 const phoneTitle={
 	...phoneBox,
-	fontSize: `${fontSize}px`,
-	lineHeight:`${lineHeight}px`,
-	fontWeight:fontWeight,
-	height:'auto',
-	color:color
+	...commonStyle
 }
 const editIcon ={
 	...addButton,
@@ -37,7 +36,9 @@ const editIcon ={
 	lineHeight:`${lineHeight}px`,
 	fontWeight:fontWeight,
 	height:`${titleLineHeight}px`,
-	color:color
+	color:color,
+	backgroundColor:'transparent',
+	border:'0px'
 }
 const titleLine={
 	...inputLine,
@@ -45,7 +46,8 @@ const titleLine={
 	padding:'0',
 	height:`${titleLineHeight}px`,
 	lineHeight:`${titleLineHeight}px`,
-	color:color
+	color:color,
+
 
 
 }

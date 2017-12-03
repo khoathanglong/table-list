@@ -1,4 +1,5 @@
+export const tableSize=912;
 export default {
-	width:'912px',
-	margin: '0 auto 30px auto'
+	width:`${tableSize}px`,
+	margin: '0 auto'
 }
